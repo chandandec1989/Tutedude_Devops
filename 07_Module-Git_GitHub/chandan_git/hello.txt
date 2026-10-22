@@ -1,0 +1,9 @@
+welcome chandan to tutedude 
+welcome chandan to tutedude 
+welcome chandan to tutedude 
+this is master branch
+this is master branch
+This is feature/chandan-dev branch
+This is feet-3 change
+
+i want to merge request feet-3 branch to master branch
