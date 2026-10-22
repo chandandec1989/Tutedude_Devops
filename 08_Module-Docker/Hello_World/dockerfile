@@ -1,7 +1,17 @@
-FROM python:3.8-alpine
+# Use the base images
+FROM python:3.9-alpine
 
-WORKDIR /app
+# set the working directory
+WORKDIR /tree
 
+# Added application file
 ADD app.py .
+ADD name.txt .
 
+# or added application file like below(no need to add more files)
+# ADD . . 
+# COPY . .
+
+# Run a command when container starts
 CMD ["python", "app.py"]
+
