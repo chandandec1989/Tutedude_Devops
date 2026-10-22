@@ -1,0 +1,24 @@
+# Use the base images
+FROM node:16-alpine
+
+# set the working directory
+WORKDIR /app
+
+# Create a simple text file
+# RUN touch chandan.txt
+# RUN echo "hello chandan" > chandan.txt
+
+# # Added application file
+# ADD app.py .
+# ADD name.txt .
+
+# or added application file like below(no need to add more files)
+ADD . . 
+# COPY . .
+
+# add Entrypoint for nodejs
+ENTRYPOINT ["node"]
+
+# Run a command when container starts
+CMD ["app.js"]
+
