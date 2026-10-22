@@ -22,6 +22,15 @@ PS C:\Users\A102322081\Downloads\Tutedude_DevOps_Lab>
 S C:\Users\A102322081\Downloads\Tutedude_DevOps_Lab> ssh -T git@github.com
 Hi chandandec1989! You've successfully authenticated, but GitHub does not provide shell access.
 
+## if we get issue on github some file is not open then follow below.
+git status -sb
+git pull --rebase origin master
+git add .
+git commit -m "Remove stale chandan_git submodule entry"
+git push origin master
+
+==================================================================
+
 • Git & GitHub Command:-
 1. Repository & Setup Shortcuts:-
 	i. Git init                               --     initialize new repository
