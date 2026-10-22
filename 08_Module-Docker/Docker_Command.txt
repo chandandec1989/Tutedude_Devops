@@ -1,0 +1,76 @@
+## Docker-Command
+Step 1: Check Docker Installation
+    docker --version
+Step 2: Search Image
+	docker search nginx
+Step 3: Pull Image from Docker Hub
+    docker pull nginx
+Step 4: Run Container
+	docker run -d --name mynginx -p 8080:80 nginx
+Step 5: Verify Running Container
+	docker ps
+Step 6: Access in Browser
+	http://localhost:8080
+Step 7: Enter Container
+    docker exec -it mynginx bash
+Step 8: Stop Container
+	docker stop mynginx
+Step 9: Start Container
+	docker start mynginx
+Step 10: Remove Container.
+	docker rm -f mynginx
+
+
+			
+Basic Commands:-
+1. Docker Command Cheet Sheet (Example):
+	1) docker build -t myapp . -  You build an image locally:
+	2) docker push myusername/myapp  - You push it to Docker Hub:
+	3) docker pull myusername/myapp   -   Later, anyone can pull it and run:
+	4) docker run myusername/myapp  -  Later, anyone can pull it and run:
+			
+2. Common Docker Commands Cheat Sheet
+	1) Docker Version & Info
+    	a) docker version - Show Docker client and server version.
+		b) docker info - Show system-wide info about Docker (containers, images, storage, etc).
+					
+	2) Images:-
+		a) docker images or docker image ls - List all local Docker images.
+		b) docker pull <image_name> - Download image from Docker Hub (or other registry).
+		c) docker build -t <image_name>:<tag> <path> - Build image from Dockerfile in the specified path.
+		d) docker rmi <image_id or name> - Remove/delete a Docker image.
+				
+	3) Containers:-
+		a) docker ps - List running containers.
+		b) docker ps -a - List all containers (including stopped).
+		c) docker run <image_name> - Create & start a new container from image.
+		d) docker run -it <image_name> /bin/bash - Start container interactively with bash shell.
+		e) docker stop <container_id or name> - Stop a running container.
+		f) docker start <container_id or name> - Start a stopped container.
+		g) docker restart <container_id or name> - Restart a container.
+		h) docker rm <container_id or name> - Remove/delete a stopped container.
+		i) docker logs <container_id or name> - Show logs of a container.
+				
+	4) Container Management:-
+		a) docker exec -it <container_id or name> /bin/bash - Open a shell inside a running container.
+		b) docker commit <container_id> <new_image_name>  - Create a new image from a container’s current state.
+		
+	5) Volumes and Networks:-
+		a) docker volume ls - List Docker volumes.
+		b) docker volume create <volume_name> - Create a new volume.
+		c) docker network ls - List Docker networks.
+				
+	6) Docker Compose (for multi-container apps):-
+		a) docker-compose up - Start all services defined in docker-compose.yml.
+		b) docker-compose down - Stop and remove containers, networks defined in compose.
+			
+	7) System Cleanup:-
+		a) docker system prune - Remove all stopped containers, unused networks, dangling images.
+		b) docker image prune - Remove unused images.
+				
+	8) Bonus: Useful Options:-
+		a) -d → Run container in background (detached mode)
+		b) -p <host_port>:<container_port> → Map ports
+		c) -v <host_path>:<container_path> → Mount volumes (share files)
+		d) -it → Interactive + TTY (for bash shell)
+If you want, I can give you detailed examples for each command or help you with commands specific to your project!
