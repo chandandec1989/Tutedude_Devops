@@ -1,0 +1,34 @@
+ssh-keygen -t rsa -b 4096 -C "chandan.singhdec1989@gmail.com"
+
+eval "$(ssh-agent -s)"
+
+ssh-add ~/ .ssh/id_rsa
+
+cat ~/ .ssh/id_rsa.pub
+    (then copy the content)
+
+copy and paste the ssh key on github/gitlab
+
+
+## Set ssh-keygen in powershell administration
+1. ssh-keygen -t rsa -b 4096 -C "chandan.singhdec1989@gmail.com" 
+2. Set-Service ssh-agent -StartupType Automatic
+3. Start-Service ssh-agent
+4. ssh-add "$env:USERPROFILE\.ssh\id_rsa"
+5. Get-ChildItem "$env:USERPROFILE\.ssh"
+    -> you will get output below
+
+    Directory: C:\Users\A102322081\.ssh
+
+    Mode                 LastWriteTime         Length Name                                                                                                         
+    ----                 -------------         ------ ----                                                                                                         
+    -a----        12/24/2025  10:50 AM            432 id_ed25519                                                                                                   
+    -a----        12/24/2025  10:50 AM            113 id_ed25519.pub                                                                                               
+    -a----        10/17/2026  02:52 PM           3401 id_rsa                                                                                                       
+    -a----        10/17/2026  02:52 PM            757 id_rsa.pub                                                                                                   
+    -a----        12/24/2025  10:38 AM             96 known_hosts     
+
+
+6. Get-Content "$HOME\.ssh\id_rsa.pub" = to find pub key
+
+7. go to github setting -> SSH and GPG keys -> click on new ssh key - paste the pub key to authenticate. 
