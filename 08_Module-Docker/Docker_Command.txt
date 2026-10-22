@@ -20,6 +20,8 @@ Step 9: Start Container
 Step 10: Remove Container.
 	docker rm -f mynginx
 
+# Dockerfile
+docker build -t hello-world .
 
 			
 Basic Commands:-
