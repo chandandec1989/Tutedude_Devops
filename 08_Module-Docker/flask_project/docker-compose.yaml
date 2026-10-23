@@ -1,0 +1,36 @@
+version: '3.6'
+
+services:
+
+  backend:
+    build:
+      context: .
+      dockerfile: dockerfile_backend
+    hostname: backend-host
+    volumes:
+      - ./backend:/app
+    ports:
+      - "8000:8000"
+    networks:
+      - flask_project_app-network
+  
+  frontend:
+    build:
+      context: .
+      dockerfile: dockerfile_frontend
+    hostname: frontend-host
+    volumes:
+      - ./frontend:/app
+    environment:
+      - BACKEND_URL=http://backend-host:8000/api
+    ports:
+      - "3000:3000"
+    links:
+      - backend
+    depends_on:
+      - backend
+    networks:
+      - flask_project_app-network
+    
+networks:
+  flask_project_app-network: {}
